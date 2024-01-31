@@ -40,3 +40,15 @@ function atualizarImagemSelecionada() {
     imagemSelecionada = opcaoImagemSelecionada;
     imagemVisualizacao.src = `./imagens/opcoes-cores/${opcoesCores[corSelecionada].nomePastaImagens}/imagem-${imagemSelecionada}.jpeg`;
 }
+
+function atualizarTamanho() {
+    const opcaoTamanhoSelecionado = document.querySelector('[name="opcao-tamanho"]:checked').id.charAt(0);
+    tamanhoSelecionado = opcaoTamanhoSelecionado;
+    if (opcoesTamanho[tamanhoSelecionado] === '41 mm') {
+        imagemVisualizacao.classList.add('caixa-pequena');
+        tituloProduto.innerText = `Pulseira loop esportiva ${opcoesCores[corSelecionada].nome.toLowerCase()} para caixa de ${opcoesTamanho[tamanhoSelecionado]}`;
+        return;
+    }
+    imagemVisualizacao.classList.remove('caixa-pequena');
+    tituloProduto.innerText = `Pulseira loop esportiva ${opcoesCores[corSelecionada].nome.toLowerCase()} para caixa de ${opcoesTamanho[tamanhoSelecionado]}`;
+}
