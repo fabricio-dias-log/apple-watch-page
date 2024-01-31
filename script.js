@@ -34,3 +34,9 @@ const opcoesTamanho = ['41 mm', '45 mm'];
 let corSelecionada = 1;
 let tamanhoSelecionado = 1;
 let imagemSelecionada = 1;
+
+function atualizarImagemSelecionada() {
+    const opcaoImagemSelecionada = document.querySelector('[name="opcao-imagem"]:checked').id.charAt(0);
+    imagemSelecionada = opcaoImagemSelecionada;
+    imagemVisualizacao.src = `./imagens/opcoes-cores/${opcoesCores[corSelecionada].nomePastaImagens}/imagem-${imagemSelecionada}.jpeg`;
+}
